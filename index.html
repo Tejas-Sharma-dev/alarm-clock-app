@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alarm Clock</title>
+    <meta name="description" content="Alarm Clock">
+    <meta name="Authour" content="Tejas Sharma">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/icons/3d-alarm.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <!-- fontawesome for icons -->
+    <script src="https://kit.fontawesome.com/f1456cc214.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="alarm-clock-container">
+        <!-- current time container -->
+        <div class="current-time">
+            <span id="hour"></span>
+            <span class="seperator">:</span>
+            <span id="minute"></span>
+            <span class="seperator">:</span>
+            <span id="second"></span>
+            <span id="phase"></span>
+            <span id="day"></span>
+        </div>
+        <!-- set time container -->
+        <div class="set-time roboto-light">
+            <!-- set time header -->
+            <div class="time-set-header roboto-light-italic">
+                <img src="https://img.icons8.com/?size=100&id=NRnX1c9yvXvd&format=png&color=000000"
+                    alt="set-alarm-logo">
+                <h3>Set Alarm</h3>
+            </div>
+            <!-- set time input container -->
+            <div class="time-set-container">
+                <div class="set-time-format">
+                    <label for="hour-select">Hour <span class="input-required" id="hrs-req"></span></label>
+                    <select id="hour-select"></select>
+                </div>
+                <div class="set-time-format">
+                    <label for="minute-select">Minute <span class="input-required" id="min-req"></span></label>
+                    <select id="minute-select"></select>
+                </div>
+                <div class="set-time-format">
+                    <label for="second-select">Seconds <span class="input-required" id="sec-req"></span></label>
+                    <select id="second-select"></select>
+                </div>
+                <div class="set-time-format">
+                    <label for="phase-select" class="label-header">Phase <span class="input-required"
+                            id="phase-req"></span></label>
+                    <div class="phase-select-box">
+                        <input type="radio" name="phase-select" id="phase-AM" value="AM">
+                        <label for="phase-AM">AM</label>
+                        <input type="radio" name="phase-select" id="phase-PM" value="PM">
+                        <label for="phase-PM">PM</label>
+                    </div>
+                </div>
+                <div class="alarm-info-box">
+                    <label for="title-txt-box">Title
+                        <span class="input-required" id="title-req"></span>
+                    </label>
+                    <input type="text" name="alarm-title" class="roboto-light" id="title-txt-box" required
+                        autocomplete="on" maxlength="50" placeholder="alarm title" minlength="5">
+                    <label for="msg-txt-box">Message</label>
+                    <textarea name="msg-txt-box" id="msg-txt-box" rows="5" cols="28" placeholder="Optional"
+                        class="roboto-light" maxlength="100"></textarea>
+                </div>
+                <input type="button" value="Create Alarm" id="createAlarmBtn" class="btn-style">
+            </div>
+        </div>
+        <!-- alarm list header -->
+        <div class="alarm-list-header roboto-thin">
+            <span>Time</span>
+            <span>Title</span>
+            <span>Message</span>
+            <span>Remove</span>
+        </div>
+        <!-- alarm list container -->
+        <div class="alarm-list" id="alarm-list-container">
+            <div>
+                <h2 id="idle-header" class="roboto-thin"><i class="fa-regular fa-clock"></i> No Alarm Set</h2>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" async defer></script>
+</body>
+
+</html>
